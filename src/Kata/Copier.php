@@ -2,7 +2,7 @@
 
 namespace Kata;
 
-class Index
+class Copier
 {
     public function handle(): bool
     {

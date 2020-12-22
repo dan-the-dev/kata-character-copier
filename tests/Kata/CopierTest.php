@@ -3,13 +3,13 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Index;
+use Kata\Copier;
 
-class IndexTest extends TestCase
+class CopierTest extends TestCase
 {
     protected function setUp(): void
     {
-        $this->index = new Index();
+        $this->copier = new Copier();
     }
 
     public function testShallPass(): void
@@ -19,6 +19,6 @@ class IndexTest extends TestCase
 
     public function testHandleReturnTrue(): void
     {
-        $this->assertEquals(true, $this->index->handle());
+        $this->assertEquals(true, $this->copier->handle());
     }
 }
