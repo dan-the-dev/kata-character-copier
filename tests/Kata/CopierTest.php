@@ -4,6 +4,8 @@ namespace Kata;
 
 use PHPUnit\Framework\TestCase;
 use Kata\Copier;
+use Kata\SourceInterface;
+use Kata\DestinationInterface;
 
 class CopierTest extends TestCase
 {
