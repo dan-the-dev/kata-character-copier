@@ -7,18 +7,26 @@ use Kata\Copier;
 
 class CopierTest extends TestCase
 {
+    /** @var SourceInterface|MockObject */
+    private $source;
+    /** @var DestinationInterface|MockObject */
+    private $destination;
+
     protected function setUp(): void
     {
-        $this->copier = new Copier();
-    }
+        $this->source = $this->createStub(SourceInterface::class);
+        $this->destination = $this->createMock(DestinationInterface::class);
 
-    public function testShallPass(): void
-    {
-        $this->assertEquals(1, 1);
+        $this->copier = new Copier($this->source, $this->destination);
     }
 
     public function testHandleReturnTrue(): void
     {
-        $this->assertEquals(null, $this->copier->copy());
+        $this->source
+        ->expects($this->exactly(4))
+        ->method('getChar')
+        ->will($this->onConsecutiveCalls('a', 'b', 'c', '\n'));
+
+        $this->copier->copy();
     }
 }
