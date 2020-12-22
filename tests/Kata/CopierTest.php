@@ -19,6 +19,6 @@ class CopierTest extends TestCase
 
     public function testHandleReturnTrue(): void
     {
-        $this->assertEquals(true, $this->copier->handle());
+        $this->assertEquals(null, $this->copier->copy());
     }
 }

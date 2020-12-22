@@ -2,10 +2,11 @@
 
 namespace Kata;
 
-class Copier
+use Kata\CopierInterface;
+
+class Copier implements CopierInterface
 {
-    public function handle(): bool
+    public function copy(): void
     {
-        return true;
     }
 }
