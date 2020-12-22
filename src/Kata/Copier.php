@@ -25,6 +25,7 @@ class Copier implements CopierInterface
             if ($char === '\n') {
                 break;
             }
+            $this->destination->setChar($char);
         }
     }
 }

@@ -29,6 +29,15 @@ class CopierTest extends TestCase
         ->method('getChar')
         ->will($this->onConsecutiveCalls('a', 'b', 'c', '\n'));
 
+        $this->destination
+        ->expects($this->exactly(3))
+        ->method('setChar')
+        ->with($this->logicalOr(
+             $this->equalTo('a'),
+             $this->equalTo('b'),
+             $this->equalTo('c'),
+        ));
+
         $this->copier->copy();
     }
 }
